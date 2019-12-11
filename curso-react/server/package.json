@@ -1,0 +1,27 @@
+{
+  "name": "curso-react",
+  "version": "1.0.0",
+  "description": "API do projeto de cursos react impacta",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luizspinelli/react-curso.git"
+  },
+  "keywords": [
+    "cursos",
+    "impacta",
+    "react"
+  ],
+  "author": "Luiz Spinelli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luizspinelli/react-curso/issues"
+  },
+  "homepage": "https://github.com/luizspinelli/react-curso#readme",
+  "dependencies": {
+    "mongoose": "^5.8.0"
+  }
+}
