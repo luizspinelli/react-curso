@@ -40,8 +40,8 @@ export class FormCurso extends Component {
                             className="col-sm-4 col-form-label">
                             Preço:</label>
                         <div className="col-sm-8 col-8">
-                            <input type="text"
-                                className="form-control" id="preco"  value={this.props.preco} onChange={this.props.precoChange} />
+                            <input type="number"
+                                className="form-control" id="preco" value={this.props.preco} onChange={this.props.precoChange} />
                         </div>
                     </div>
                     <div className="form-group row">
@@ -56,10 +56,16 @@ export class FormCurso extends Component {
                             </select>
                         </div>
                     </div>
-                    <div className="form-group row">
+                    <div className="form-group row" onClick={this.props.adicionar}>
                         <button
                             className="btn btn-primary ml-3 mb-3">
-                            Adicionar
+                            {this.props.isAtualizar ? 'Atualizar' : 'Adicionar'}
+                        </button>
+                    </div>
+                    <div className="form-group row" onClick={this.props.limpar}>
+                        <button
+                            className="btn btn-primary ml-3 mb-3">
+                            Limpar
                         </button>
                     </div>
                 </form>
