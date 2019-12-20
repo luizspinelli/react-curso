@@ -1,10 +1,18 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { dataOnChange, nomeOnChange, emailOnChange, telefoneOnChange, assuntoOnChange } from '../../actions/contatoActions'
+import { dataOnChange, nomeOnChange, emailOnChange, telefoneOnChange, assuntoOnChange, limpar, adicionar } from '../../actions/contatoActions'
 
 
 class ContatoForm extends Component {
+
+    preAdicionar(evento){
+        evento.preventDefault()
+        const {data,nome, email,telefone, assunto, adicionar} = this.props
+
+        adicionar(data,nome,email,telefone,assunto)
+    }
+
     render() {
         return (
             <div>
@@ -57,8 +65,12 @@ class ContatoForm extends Component {
                     </div>
                     <div className="form-group row">
 
-                        <button className="btn btn-primary ml-3 mb-3">
+                        <button className="btn btn-primary ml-3 mb-3" onClick={this.preAdicionar.bind(this)} >
                             Adicionar
+                        </button>
+
+                        <button className="btn btn-primary ml-3 mb-3" onClick={this.props.limpar}>
+                            Limpar
                         </button>
                     </div>
                 </form>
@@ -80,7 +92,9 @@ const mapActionsToProps = dispatch => bindActionCreators({
     nomeOnChange,
     emailOnChange,
     telefoneOnChange,
-    assuntoOnChange
+    assuntoOnChange,
+    limpar,
+    adicionar
 }, dispatch)
 
 export default connect(mapStateToProps, mapActionsToProps)(ContatoForm)
